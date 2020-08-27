@@ -1,31 +1,36 @@
 import * as React from 'react'
-import Button from '@material-ui/core/Button';
-//import { connect } from 'react-redux'
-//import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-//import  { improveCounter }  from '../store/actions'
+import Button from '@material-ui/core/Button'
+
+import  { showBlockAct }  from '../store/actions'
 
 
 
-function ButtonComp() {
-
+function ButtonComp(props) {
 
   return (
-    <Button variant="contained">
+    <Button variant="contained" onClick={ () => {
+        let value = '' 
+        props.showBlock == 'true' ? value = 'false' : value = 'true'
+        props.showBlockAct(value)
+      }
+    }>
       Показать / убрать
     </Button>
   )
 }
 
-// const mapStateToProps = (state) => {
-//   return {counter: state.counter}
-// }
+const mapStateToProps = (state) => {
+  return {showBlock: state.showBlock}
+}
 
-// const mapDispatchYoProps = (dispatch) => {
-//   return { 
-//     improveCounter: bindActionCreators(improveCounter,dispatch)
-//   }
-// }
+const mapDispatchYoProps = (dispatch) => {
+  return { 
+    showBlockAct: bindActionCreators(showBlockAct,dispatch)
+  }
+}
 
- export default ButtonComp
-//export default connect(mapStateToProps, mapDispatchYoProps)(App)
+
+export default connect(mapStateToProps, mapDispatchYoProps)(ButtonComp)

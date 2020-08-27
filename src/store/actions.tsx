@@ -1,7 +1,7 @@
 
- export  const improveCounter = (newCounter: number) => {
+ export  const showBlockAct = (newShowBlock: string) => {
     return {
-      type: 'IMPROVE_COUNTER',
-      value: newCounter
+      type: 'SHOW_BLOCK',
+      value: newShowBlock
     }
   }

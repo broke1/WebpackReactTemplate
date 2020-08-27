@@ -1,5 +1,5 @@
 const initialState = {
-  counter: 0
+  showBlock: 'true'
 }
 
 export default initialState
