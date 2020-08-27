@@ -1,14 +1,13 @@
-import initialState from './initialstate'
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'SHOW_BLOCK': 
-      return {...state, showBlock: action.value}
-  
-    default:
-      return state
-  }
-  
-}
+import { combineReducers } from 'redux'
 
-export default reducer
+import  chartReducer  from './chart/reducers'
+
+import buttonReducer from './button/reducers'
+
+export default combineReducers({
+  chart: chartReducer,
+  button: buttonReducer,
+})
+
+

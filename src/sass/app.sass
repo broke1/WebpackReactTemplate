@@ -9,8 +9,26 @@
 .our-app
   font-family: 'Roboto', sans-serif
 
-.hiddenCard
-  opacity: 0
+.container-app
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: flex-start
 
-.showCard
-  opacity: 1
+  .button-app
+    background-color: green
+    color: white
+
+    &:hover
+     background-color: green 
+
+  .chart
+    margin-left: 50px
+    width: 600px
+    height: 500px
+    padding: 10px
+    transition: all 0.3s ease
+    opacity: 0
+
+  .showCard
+    opacity: 1

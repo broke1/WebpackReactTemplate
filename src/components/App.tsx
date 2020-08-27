@@ -17,8 +17,10 @@ function App() {
     <div className="our-app">
       <Container maxWidth="lg">
         <h1 className="title-app">{ title }</h1>
-        <Provider store = {store}><ButtonComp /></Provider>
-        <Provider store = {store}><Chart /></Provider>
+        <div className="container-app">
+          <Provider store = {store}><ButtonComp /></Provider>
+          <Provider store = {store}><Chart /></Provider>
+        </div>
       </Container>
     </div>
   )

@@ -1,5 +1,5 @@
 const initialState = {
-  showBlock: 'true'
+  showChart: 'false'
 }
 
 export default initialState
