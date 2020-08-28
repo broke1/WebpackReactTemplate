@@ -7,12 +7,10 @@ import ButtonComp from './Button'
 import Chart from './Chart'
 
 
-
 import '../sass/app.sass'
 
 function App() {
-
-  let title : string = "Круговая диаграмма"
+  let title = "Круговая диаграмма"
   return (
     <div className="our-app">
       <Container maxWidth="lg">

@@ -63,7 +63,6 @@ function createPieChart() {
 
 function Chart(props) {
 
-
   useEffect(() => {   // замена componentDidMount в данном случае
     createPieChart()
   });
