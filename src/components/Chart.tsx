@@ -67,7 +67,6 @@ function Chart(props) {
     createPieChart()
   });
   
-
   return (
     <Card className={`${props.showChart == 'true' ? 'showCard' : ''} chart`}>
       <CardContent>
