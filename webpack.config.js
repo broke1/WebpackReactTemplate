@@ -12,7 +12,7 @@ module.exports = {
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname,'dist'),
-    publicPath: ''
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -75,6 +75,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
     overlay: true
   },
   plugins: [
