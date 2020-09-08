@@ -1,12 +1,15 @@
 import * as React from 'react'
 import { useEffect } from 'react'
-import { connect } from 'react-redux'
+//import { connect } from 'react-redux'
 import { useHistory } from "react-router-dom"
+import { storeFrom } from '../store/store'
 
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
 import * as d3 from 'd3'
+
+import { observer } from 'mobx-react-lite'
 
 
 function createPieChart(history) {
@@ -64,25 +67,28 @@ function createPieChart(history) {
 }
 
 
-function Chart(props) {
+const Chart = observer((props) => {
   let history = useHistory()
+  const  store  = storeFrom()
 
   useEffect(() => {   // замена componentDidMount в данном случае
     createPieChart(history)
   });
+
   
   return (
-    <Card className={`${props.showChart == 'true' ? 'showCard' : ''} chart`}>
+    <Card className={`${store.show ? 'showCard' : ''} chart`}>
       <CardContent>
         <div className="pie-chart"></div>
       </CardContent>
     </Card>
   )
-}
+})
 
-const mapStateToProps = (state) => {
-  return {showChart: state.button.showChart}
-}
+// const mapStateToProps = (state) => {
+//   return {showChart: state.button.showChart}
+// }
 
 
-export default connect(mapStateToProps)(Chart)
+//export default connect(mapStateToProps)(Chart)
+export default Chart

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Provider } from 'react-redux'
-import store from '../store/store'
+//import { Provider } from 'react-redux'
+//import store from '../store/store'
 
 
 
@@ -18,8 +18,9 @@ function App() {
       <Container maxWidth="lg">
         <h1 className="title-app">{ title }</h1>
         <div className="container-app">
-          <Provider store = {store}><ButtonComp /></Provider>
-          <Provider store = {store}><Chart /></Provider>
+          {/* <Provider store = {store}><ButtonComp /></Provider> */}
+          <ButtonComp />
+          <Chart  />
         </div>
       </Container>
     </div>
