@@ -7,6 +7,7 @@ import * as React from 'react'
 import Container from '@material-ui/core/Container'
 import ButtonComp from './Button'
 import Chart from './Chart'
+import CredentinalComp from './Credentinal'
 
 
 import '../sass/app.sass'
@@ -20,6 +21,7 @@ function App() {
         <div className="container-app">
           {/* <Provider store = {store}><ButtonComp /></Provider> */}
           <ButtonComp />
+          <CredentinalComp />
           <Chart  />
         </div>
       </Container>

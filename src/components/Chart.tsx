@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useEffect } from 'react'
 //import { connect } from 'react-redux'
 import { useHistory } from "react-router-dom"
-import { storeFrom } from '../store/store'
+import  store  from '../store/store'
 
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -69,7 +69,6 @@ function createPieChart(history) {
 
 const Chart = observer((props) => {
   let history = useHistory()
-  const  store  = storeFrom()
 
   useEffect(() => {   // замена componentDidMount в данном случае
     createPieChart(history)

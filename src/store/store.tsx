@@ -1,14 +1,21 @@
 //import { createStore } from 'redux'
 //import reducer from './reducers'
 import * as React from 'react'
-import { useContext } from 'react'
 import { observable, action } from 'mobx'
 
-const storeContext = React.createContext(  
-  observable({
+const store =  observable({
     show: false,
-    changeName: action( async function(show) {
-      let status = ''
+    name: 'Kitty',
+    action: "Hello",
+    get credentinal () {
+      return `${this.action} + ${this.name} = ${this.action+' '+this.name}`
+    },
+    changeCredential: action( function(action:string,name:string) {
+      this.action = action
+      this.name = name
+    }),
+    switchShow: action( async function(show:boolean) {
+      let status = false
       let prom = new Promise( (resolve) => {
         setTimeout( () => {
           status = show
@@ -19,9 +26,9 @@ const storeContext = React.createContext(
       this.show = await prom
     })
   })
-)
 
 
 
 
-export const storeFrom = () => useContext(storeContext)
+
+export default store

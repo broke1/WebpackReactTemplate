@@ -1,7 +1,7 @@
 import * as React from 'react'
 // import { connect } from 'react-redux'
 import { observer } from 'mobx-react-lite'
-import { storeFrom } from '../store/store'
+import  store  from '../store/store'
 
 import Button from '@material-ui/core/Button'
 
@@ -9,13 +9,12 @@ import Button from '@material-ui/core/Button'
 
 
 const ButtonComp = observer((props) => {
-  const store  = storeFrom()
   return (
     <Button variant="contained" className="button-app" onClick={ () => {
       // let value = '' 
       // props.showChart == 'true' ? value = 'false' : value = 'true'
       // props.showChartAct(value)
-      store.changeName(!store.show)
+      store.switchShow(!store.show)
     }
     }>
       Показать / убрать
